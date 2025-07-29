@@ -9,7 +9,7 @@ from engine.player_attributes import PlayerAttributes
 from engine.transition import Transition
 from engine.strategies import MenuInputStrategy, CliInputStrategy
 from engine.command import Command, CommandResult
-from engine.view import CliView, MenuView
+from engine.view import CliView, MenuView, ColoramaView
 
 
 class PlayVideoGamesCommand(Command):
@@ -147,7 +147,8 @@ if __name__ == "__main__":
         view = MenuView()
     else:  # mode == "2"
         strategy = CliInputStrategy()
-        view = CliView()
+        # view = CliView()
+        view = ColoramaView()  # Assuming ColorCliView is defined in engine/view.py
 
     # Create the game instance with the chosen pair
     game = YoungSheldon(input_strategy=strategy, view=view)
