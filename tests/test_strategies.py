@@ -1,4 +1,3 @@
-# In a NEW file: tests/test_strategies.py
 
 import pytest
 from engine.game import Game
