@@ -41,7 +41,6 @@ class CliView(View):
         if message:
             print(message)
 
-    # --- THIS METHOD IS UNIQUE TO THE CLI VIEW ---
     def get_raw_command(self) -> str:
         """Displays a simple prompt and gets a raw string command."""
         try:
@@ -70,7 +69,6 @@ class MenuView(View):
         if message:
             print(message)
 
-    # --- THIS METHOD IS UNIQUE TO THE MENU VIEW ---
     def get_menu_choice(self, choices: list[Command]) -> Command:
         """Displays a menu of commands and gets the user's choice."""
         print("\n--- Choices ---")

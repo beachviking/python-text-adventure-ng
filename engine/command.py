@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from .game import Game
     from .transition import Transition
     from .inventory_item import InventoryItem
-    from .activity import Activity
+    # from .activity import Activity
 
 
 class Command(ABC):

@@ -1,7 +1,7 @@
 from .event import Event
 from .inventory_item import InventoryItem
 from .transition import Transition
-from .activity import Activity
+# from .activity import Activity
 from .player_attributes import PlayerAttributes
 from .command import Command
 
@@ -48,9 +48,9 @@ class Place:
     def add_events(self, *events: Event):
         self.events.extend(events)
 
-    def add_activities(self, *activities: Activity):
-        """A convenience method for adding activities."""
-        self.add_events(*activities)
+    # def add_activities(self, *activities: Activity):
+    #     """A convenience method for adding activities."""
+    #     self.add_events(*activities)
 
     def process_events(self, attributes: PlayerAttributes):
         # Local import to avoid circular dependencies.
@@ -58,10 +58,11 @@ class Place:
         for event in self.events:
             if isinstance(event, Command):
                 continue  # Skips to the next item in the loop
-
+            
+            event.process(attributes)
             # ONLY process the event if it is NOT an Activity.
-            if not isinstance(event, Activity):
-                event.process(attributes)
+            # if not isinstance(event, Activity):
+            #     event.process(attributes)
 
     def add_transition(self, transition: Transition):
         self.transitions.append(transition)

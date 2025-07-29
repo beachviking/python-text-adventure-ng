@@ -28,8 +28,8 @@ def dump_place(place: Place, explored: list[Place]):
     for transition in place.transitions:
         print(f'\tTransition: {transition}')
 
-    for activity in place.activities:
-        print(f'\tActivity: {activity}')
+    # for activity in place.activities:
+    #     print(f'\tActivity: {activity}')
 
     for transition in place.transitions:
         if transition.place not in explored:
